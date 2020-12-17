@@ -1,22 +1,26 @@
 <?php
 
-function connDb()
+Class DataBase
 {
-  $host = 'localhost';
-  $db = 'todolist';
-  $user = 'root';
-  $pass = 'root';
-  $charset = 'utf8';
+  function connDb()
+  {
+    $host = 'localhost'; //host
+    $db = 'todolist';
+    $user = 'root';
+    $pass = 'root';
+    $charset = 'utf8';
 
-  $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
-  $options = [PDO::ATTR_DEFAULT_MODE => PDO::FETCH_ASSOC];
+    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
-  try {
-    $pdo = new POD($dsn, $user, $pass, $options);
-    return $pdo;
-  } catch (PDOEception $error) {
-    throw new PDOEception($error->getMessage(), $error->getCode());
+    $options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
+
+    try {
+      $pdo = new PDO($dsn, $user, $pass, $options);
+      return $pdo;
+    } catch (PDOException $e) {
+      throw new PDOException($e->getMessage(), $e->getCode());
+    }
+
   }
-
 }
