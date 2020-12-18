@@ -1,7 +1,6 @@
 <?php
 
-Class DataBase
-{
+
   function connDb()
   {
     $host = 'localhost'; //host
@@ -23,4 +22,3 @@ Class DataBase
     }
 
   }
-}

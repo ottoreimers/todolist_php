@@ -4,7 +4,7 @@
 
 <?php
 echo "<table class='table table-dark table-hover'>";
-echo "<tr><th scope='col' id='id'>Id</th><th scope='col'>Name</th><th scope='col'>Task</th><th scope='col'>Created</th><th>Done</th></tr>";
+echo "<tr><th scope='col' id='id'>Id</th><th scope='col'>Title</th><th scope='col'>Task</th><th scope='col'>Done</th><th>Created</th><th>Delete</th></tr>";
 
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it) {
@@ -32,10 +32,9 @@ $dbname = "todolist";
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $conn->prepare("SELECT id, title, task, created, done FROM todos");
+    $stmt = $conn->prepare("SELECT * FROM todos");
     $stmt->execute();
 
-    // set the resulting array to associative
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
     foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {

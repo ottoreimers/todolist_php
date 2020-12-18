@@ -19,3 +19,13 @@ function showTodo($title, $task)
   $todos = $stmt->fetchAll();
   return $todos;
 }
+
+function deleteTodo($id)
+{
+  $pdo = connDb();
+  $sql = "DELETE FROM todos WHERE id = :id";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute(['id' => $id]);
+  $todos = $stmt->delete();
+  return $todos;
+}

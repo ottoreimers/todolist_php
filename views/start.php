@@ -1,4 +1,5 @@
 <?php
+
   function regTodo()
   {
 
@@ -15,14 +16,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
-  <title>Start</title>
+  <title>ToDo list</title>
 </head>
 <body>
   <h1 id="header">Todo</h1>
     <form method="POST" action="create_todo.php">
-      <input type="text" name="title" class="form-control" placeholder="Name" aria-label="First name">
-      <input type="text" name="task" class="form-control" placeholder="Task" aria-label="Task name">
+      <input type="text" name="title" class="form-control" placeholder="Title" aria-label="First name" required>
+      <input type="text" name="task" class="form-control" placeholder="Task" aria-label="Task name" required>
       <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+    </form>
+    <form method="GET" actions="delete_todo.php">
+      <select name="id" id="delete">
+      <option value="id">
+        <?php
+          echo $id = $_GET['id'];
+        ?>
+      </option>
+      </select>
+      <button type="submit" class="btn btn-secondary btn-sm">Delete</button>
     </form>
     <?php
     include 'second.php';

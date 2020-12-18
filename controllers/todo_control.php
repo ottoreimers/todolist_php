@@ -12,7 +12,12 @@ function handleCreateTodo() {
 function handleShowTodo() {
   $title = $_GET['title'];
   $task = $_GET['task'];
+  $id = $_GET['id'];
 
-  // $todos = showTodo($title, $task);
-  // showTodoCreatedView($todos);
+}
+
+function handleDeleteTodo() {
+  $id = $_GET['id'];
+
+  deleteTodo($id);
 }
