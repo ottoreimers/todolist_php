@@ -10,6 +10,12 @@ $itemsQuery->execute(['user_id' => $_SESSION['user_id']]);
 
 $items = $itemsQuery->rowCount() ? $itemsQuery : [];
 
+$update = false;
+if (isset($_GET['id'])) {
+	$id = $_GET['id'];
+
+	$update = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +34,7 @@ $items = $itemsQuery->rowCount() ? $itemsQuery : [];
 <body>
 	<div class="list">
 		<h1 class="header">To do</h1>
+
 		<form class="item-add" action="add.php" method="POST">
 			<input type="text" name="task" placeholder="Ditt namn" class="input" autocomplete="off" required>
 			<input type="text" name="name" placeholder="Uppgift" class="input" autocomplete="off" required>
@@ -36,6 +43,21 @@ $items = $itemsQuery->rowCount() ? $itemsQuery : [];
 		<?php if (!empty($items)): ?>
 		<ul class="items">
 		<?php foreach($items as $item): ?>
+			<?php
+			if($update and $item['id'] == $id) { ?>
+
+
+					<li>
+						<form class="item-add" action="update.php?id=<?php echo $item['id']; ?>" method="POST">
+							<input type="text" name="task" value="<?php echo $item['task'] ?>" placeholder="Uppdatera ditt namn" class="input" autocomplete="off" required>
+							<input type="text" name="name" value="<?php echo $item['name'] ?>" placeholder="Uppdatera uppgift" class="input" autocomplete="off" required>
+							<input type="submit" value="Uppdatera" class="submit">
+						</form>
+					</li>
+
+			<?php	} else { ?>
+
+
 			<li>
 			<span class="task"><?php echo $item['task']?></span>
 			<span>ska</span>
@@ -47,10 +69,13 @@ $items = $itemsQuery->rowCount() ? $itemsQuery : [];
 					<a href="mark.php?as=notdone&name=<?php echo $item['id']; ?>" class="notdone-btn">Ångra</a>
 				<?php endif; ?>
 				<span>
-					<a href="delete.php" class="delete-btn">Radera</a>
+					<a class="delete-btn" href="delete.php?id=<?php echo $item['id']; ?>">Radera</a>
+				</span>
+				<span>
+					<a class="update-btn" href="index.php?id=<?php echo $item['id']; ?>">Redigera</a>
 				</span>
 			</li>
-			<?php endforeach; ?>
+			<?php } endforeach; ?>
 		</ul>
 		<?php else: ?>
 			<p>Du har inte lagt till något ännu</p>
