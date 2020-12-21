@@ -27,8 +27,9 @@ if (isset($_GET['id'])) {
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style2.css">
 	<title>To do</title>
 </head>
 <body>
@@ -40,34 +41,43 @@ if (isset($_GET['id'])) {
 			<input type="text" name="name" placeholder="Uppgift" class="input" autocomplete="off" required>
 			<input type="submit" value="Lägg till" class="submit">
 		</form>
-		<?php if (!empty($items)): ?>
-		<ul class="items">
-		<?php foreach($items as $item): ?>
-			<?php
-			if($update and $item['id'] == $id) { ?>
 
+		<?php
+			if (!empty($items)):
+		?>
+			<ul class="items">
+
+		<?php
+			foreach($items as $item):
+		?>
+			<?php
+				if($update and $item['id'] == $id) { ?>
 
 					<li>
-						<form class="item-add" action="update.php?id=<?php echo $item['id']; ?>" method="POST">
-							<input type="text" name="task" value="<?php echo $item['task'] ?>" placeholder="Uppdatera ditt namn" class="input" autocomplete="off" required>
-							<input type="text" name="name" value="<?php echo $item['name'] ?>" placeholder="Uppdatera uppgift" class="input" autocomplete="off" required>
-							<input type="submit" value="Uppdatera" class="submit">
+						<form class="item-update" action="update.php?id=<?php echo $item['id']; ?>" method="POST">
+							<input type="text" name="task" value="<?php echo $item['task'] ?>" placeholder="Uppdatera ditt namn" class="input-update" autocomplete="off" required>
+							<input type="text" name="name" value="<?php echo $item['name'] ?>" placeholder="Uppdatera uppgift" class="input-update" autocomplete="off" required>
+							<input type="submit" value="Uppdatera" class="submit-update">
 						</form>
 					</li>
 
-			<?php	} else { ?>
-
+			<?php
+			} else { ?>
 
 			<li>
-			<span class="task"><?php echo $item['task']?></span>
-			<span>ska</span>
-			<span class="item<?php echo $item['done'] ? ' done' : '' ?>"><?php echo $item['name'] ?></span>
-				<?php if(!$item['done']): ?>
-					<a href="mark.php?as=done&name=<?php echo $item['id']; ?>" class="done-btn">Markera som klar</a>
-				<?php endif; ?>
-				<?php if($item['done']): ?>
-					<a href="mark.php?as=notdone&name=<?php echo $item['id']; ?>" class="done-btn">Ångra</a>
-				<?php endif; ?>
+				<span class="task"><?php echo $item['task']?></span>
+				<span>ska</span>
+				<span class="item<?php echo $item['done'] ? ' done' : '' ?>"><?php echo $item['name'] ?></span>
+					<?php
+						if(!$item['done']): ?>
+							<a href="mark.php?as=done&name=<?php echo $item['id']; ?>" class="done-btn">Markera som klar</a>
+					<?php
+						endif; ?>
+					<?php
+						if($item['done']): ?>
+							<a href="mark.php?as=notdone&name=<?php echo $item['id']; ?>" class="done-btn">Ångra</a>
+					<?php
+						endif; ?>
 				<span>
 					<a class="done-btn" href="delete.php?id=<?php echo $item['id']; ?>">Radera</a>
 				</span>
@@ -75,11 +85,14 @@ if (isset($_GET['id'])) {
 					<a class="done-btn" href="index.php?id=<?php echo $item['id']; ?>">Redigera</a>
 				</span>
 			</li>
-			<?php } endforeach; ?>
+			<?php }
+				endforeach; ?>
 		</ul>
-		<?php else: ?>
-			<p>Du har inte lagt till något ännu</p>
-		<?php endif; ?>
+		<?php
+			else: ?>
+				<p>Du har inte lagt till något ännu</p>
+		<?php
+			endif; ?>
 	</div>
 </body>
 </html>
