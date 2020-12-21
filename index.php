@@ -66,13 +66,13 @@ if (isset($_GET['id'])) {
 					<a href="mark.php?as=done&name=<?php echo $item['id']; ?>" class="done-btn">Markera som klar</a>
 				<?php endif; ?>
 				<?php if($item['done']): ?>
-					<a href="mark.php?as=notdone&name=<?php echo $item['id']; ?>" class="notdone-btn">Ångra</a>
+					<a href="mark.php?as=notdone&name=<?php echo $item['id']; ?>" class="done-btn">Ångra</a>
 				<?php endif; ?>
 				<span>
-					<a class="delete-btn" href="delete.php?id=<?php echo $item['id']; ?>">Radera</a>
+					<a class="done-btn" href="delete.php?id=<?php echo $item['id']; ?>">Radera</a>
 				</span>
 				<span>
-					<a class="update-btn" href="index.php?id=<?php echo $item['id']; ?>">Redigera</a>
+					<a class="done-btn" href="index.php?id=<?php echo $item['id']; ?>">Redigera</a>
 				</span>
 			</li>
 			<?php } endforeach; ?>
