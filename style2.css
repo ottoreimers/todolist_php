@@ -44,6 +44,7 @@ a {
 
 .items li:hover .done-btn {
 	opacity: 1;
+	box-shadow: 0 0 80px  #03dac5;
 }
 
 .items .item.done {
@@ -56,13 +57,13 @@ a {
 	border-radius: 2px;
 	background-color: #242424;
 	border-bottom: none;
-	padding: 15px 0;
+	padding: 10px 0;
 	margin: 3px 0;
 }
 
-.input {
-	width: 100%;
-	border-radius: 5px;
+.item-add .input {
+	width: 29%;
+	padding-left: 5px;
 }
 
 .input:focus {
@@ -70,20 +71,20 @@ a {
 }
 
 .item-update {
-	margin: 10px;
+	margin: 5px;
 }
 
 .item-update .input-update {
   border: 0;
 	background-color: #414141;
 	border-bottom: none;
-	padding: 5px 0;
-	margin: 2px 0;
 }
 
 .input-update {
-	width: 30%;
+	width: 28%;
 	border-radius: 2px;
+	padding: 5px;
+	/* padding-left: 5px; */
 }
 
 .input-update:focus {
@@ -100,6 +101,7 @@ a {
 	border: 0;
 	opacity: 0.4;
 	transition: 0.2s;
+
 }
 
 .submit {
@@ -107,13 +109,13 @@ a {
 	border-radius: 2px;
 	background-color: #bb86fc;
 	color: #000000;
-	font-size: larger;
+	/* font-size: larger; */
 	font-weight: 500;
-	padding: 5px 10px;
+	padding: 10px;
 	border: none;
-	width: 100%;
-	margin-top: 10px;
-	/* box-shadow: 3px 3px 0 #01ac9b; */
+	width: 30%;
+	/* margin-top: 10px; */
+	box-shadow: 0 0 80px  #bb86fc;
 	transition: 0.2s;
 }
 
@@ -131,13 +133,11 @@ a {
 	padding: 5px 10px;
 	border: none;
 	width: 30%;
-	margin-top: 10px;
-	/* box-shadow: 3px 3px 0 #01ac9b; */
+	box-shadow: 0 0 80px  #bb86fc;
 	transition: 0.2s;
 }
 
 .submit-update:hover {
 	box-shadow: none;
 	opacity: 0.4;
-	/* background-color: #01ac9b; */
 }
