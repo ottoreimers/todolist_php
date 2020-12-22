@@ -1,5 +1,5 @@
 body {
-	background-color:#121212;
+	background-color:#242424;
 }
 
 body,
@@ -15,7 +15,7 @@ a {
 }
 
 .list {
-	background-color: #000000;
+	background-color: #121212;
 	margin: 20px auto;
 	width: 100%;
 	max-width: 500px;
@@ -28,7 +28,7 @@ a {
 .list .header {
 	font-family: 'Nunito Sans', sans-serif;
 	margin: 0 0 10px 0;
-	color: rgb(216, 216, 216);
+	color: #ffffff;
 }
 
 .items {
@@ -36,7 +36,7 @@ a {
 	padding: 0;
 	list-style-type: none;
 	font-family: 'Nunito Sans', sans-serif;
-	color: rgb(216, 216, 216);
+	color: #ffffff;
 }
 
 .items .task {
@@ -54,7 +54,7 @@ a {
 .items li,
 .item-add .input {
 	border: 0;
-	background-color: #121212;
+	background-color: #242424;
 	border-bottom: none;
 	padding: 15px 0;
 	margin: 3px 0;
@@ -87,36 +87,46 @@ a {
 .done-btn {
 	display: inline-block;
 	font-size: .8em;
-	background-color: #bb86fc;
+	background-color: #03dac5;
 	color: #000000;
 	padding: 3px 6px;
 	border: 0;
 	opacity: 0.4;
+	transition: 0.2s;
 }
 
 .submit {
-	background-color: #03dac5;
+	cursor: pointer;
+	background-color: #bb86fc;
 	color: #000000;
 	padding: 5px 10px;
 	border: none;
 	width: 100%;
 	margin-top: 10px;
-	box-shadow: 3px 3px 0 #01ac9b;
+	/* box-shadow: 3px 3px 0 #01ac9b; */
+	transition: 0.2s;
 }
 
 .submit:hover {
 	box-shadow: none;
+	opacity: 0.4;
+	/* background-color: #01ac9b; */
 }
 
 .submit-update {
-	background-color: #03dac5;
+	cursor: pointer;
+	background-color: #bb86fc;
+	color: #000000;
 	padding: 5px 10px;
 	border: none;
 	width: 30%;
 	margin-top: 10px;
-	box-shadow: 3px 3px 0 #01ac9b;
+	/* box-shadow: 3px 3px 0 #01ac9b; */
+	transition: 0.2s;
 }
 
 .submit-update:hover {
 	box-shadow: none;
+	opacity: 0.4;
+	/* background-color: #01ac9b; */
 }
