@@ -38,6 +38,7 @@ if (isset($_GET['id'])) {
 
 		<form class="item-add" action="add.php" method="POST">
 			<input type="text" name="task" placeholder="Ditt namn" class="input" autocomplete="off" required>
+			ska
 			<input type="text" name="name" placeholder="Uppgift" class="input" autocomplete="off" required>
 			<input type="submit" value="Lägg till" class="submit">
 		</form>
@@ -56,6 +57,7 @@ if (isset($_GET['id'])) {
 					<li>
 						<form class="item-update" action="update.php?id=<?php echo $item['id']; ?>" method="POST">
 							<input type="text" name="task" value="<?php echo $item['task'] ?>" placeholder="Uppdatera ditt namn" class="input-update" autocomplete="off" required>
+							ska
 							<input type="text" name="name" value="<?php echo $item['name'] ?>" placeholder="Uppdatera uppgift" class="input-update" autocomplete="off" required>
 							<input type="submit" value="Uppdatera" class="submit-update">
 						</form>
