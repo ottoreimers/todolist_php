@@ -109,20 +109,17 @@ a {
 	border-radius: 2px;
 	background-color: #bb86fc;
 	color: #000000;
-	/* font-size: larger; */
 	font-weight: 500;
 	padding: 10px;
 	border: none;
 	width: 30%;
-	/* margin-top: 10px; */
-	box-shadow: 0 0 80px  #bb86fc;
 	transition: 0.2s;
+	opacity: 0.4;
 }
 
 .submit:hover {
-	box-shadow: none;
-	opacity: 0.4;
-	/* background-color: #01ac9b; */
+	box-shadow: 0 0 80px  #bb86fc;
+	opacity: 1;
 }
 
 .submit-update {
@@ -133,11 +130,12 @@ a {
 	padding: 5px 10px;
 	border: none;
 	width: 30%;
-	box-shadow: 0 0 80px  #bb86fc;
+	box-shadow: none;
 	transition: 0.2s;
+	opacity: 0.4;
 }
 
 .submit-update:hover {
-	box-shadow: none;
-	opacity: 0.4;
+	box-shadow: 0 0 80px  #bb86fc;
+	opacity: 1;
 }
