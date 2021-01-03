@@ -67,24 +67,25 @@ if (isset($_GET['id'])) {
 			} else { ?>
 
 			<li>
+			<span class="task"><?php echo $item['id']?></span>
 				<span class="task"><?php echo $item['task']?></span>
 				<span>ska</span>
 				<span class="item<?php echo $item['done'] ? ' done' : '' ?>"><?php echo $item['name'] ?></span>
 					<?php
 						if(!$item['done']): ?>
-							<a href="mark.php?as=done&name=<?php echo $item['id']; ?>" class="done-btn">Markera som klar</a>
+							<a class="done-btn" href="mark.php?as=done&name=<?php echo $item['id']; ?>">Klar</a>
 					<?php
 						endif; ?>
 					<?php
 						if($item['done']): ?>
-							<a href="mark.php?as=notdone&name=<?php echo $item['id']; ?>" class="done-btn">Ångra</a>
+							<a class="done-btn" href="mark.php?as=notdone&name=<?php echo $item['id']; ?>">Ångra</a>
 					<?php
 						endif; ?>
 				<span>
-					<a class="done-btn" href="delete.php?id=<?php echo $item['id']; ?>">Radera</a>
+					<a class="del-btn" href="delete.php?id=<?php echo $item['id']; ?>">Radera</a>
 				</span>
 				<span>
-					<a class="done-btn" href="index.php?id=<?php echo $item['id']; ?>">Redigera</a>
+					<a class="upd-btn" href="index.php?id=<?php echo $item['id']; ?>">Redigera</a>
 				</span>
 			</li>
 			<?php }

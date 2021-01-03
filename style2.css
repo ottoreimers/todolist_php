@@ -40,9 +40,20 @@ a {
 
 .items .task {
 	font-weight: bolder;
+	margin-left: 5px;
 }
 
 .items li:hover .done-btn {
+	opacity: 1;
+	box-shadow: 0 0 80px  #03dac5;
+}
+
+.items li:hover .del-btn {
+	opacity: 1;
+	box-shadow: 0 0 80px  #03dac5;
+}
+
+.items li:hover .upd-btn {
 	opacity: 1;
 	box-shadow: 0 0 80px  #03dac5;
 }
@@ -97,11 +108,37 @@ a {
 	font-size: .8em;
 	background-color: #03dac5;
 	color: #000000;
+	margin: 5px;
 	padding: 3px 6px;
 	border: 0;
 	opacity: 0.4;
 	transition: 0.2s;
+}
 
+.del-btn {
+	display: inline-block;
+	border-radius: 2px;
+	font-size: .8em;
+	background-color: #03dac5;
+	color: #000000;
+	margin: 5px;
+	padding: 3px 6px;
+	border: 0;
+	opacity: 0.4;
+	transition: 0.2s;
+}
+
+.upd-btn {
+	display: inline-block;
+	border-radius: 2px;
+	font-size: .8em;
+	background-color: #03dac5;
+	color: #000000;
+	margin: 5px;
+	padding: 3px 6px;
+	border: 0;
+	opacity: 0.4;
+	transition: 0.2s;
 }
 
 .submit {
